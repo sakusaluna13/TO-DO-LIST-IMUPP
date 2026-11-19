@@ -1,0 +1,266 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe1ec, #fff0f5, #ffd6e7);
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 450px;
+    background: #fffafd;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(219, 112, 147, 0.2);
+    border: 2px solid #fff;
+}
+
+/* Heading */
+.head {
+    text-align: center;
+    color: #e779a5;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.head::after {
+    content: ' ♡';
+    color: #ffabc9;
+}
+
+/* Input Todo */
+.create-todo {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.create-todo input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 18px;
+    border: 2px solid #ffd1e2;
+    border-radius: 15px;
+    outline: none;
+    background: #fff3f8;
+    color: #bd6689;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.create-todo input::placeholder {
+    color: #dba2b9;
+}
+
+.create-todo input:focus {
+    border-color: #f28bb4;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(242, 139, 180, 0.2);
+}
+
+/* Add Button */
+.create-todo button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 15px;
+    background: #f58db5;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.create-todo button:hover {
+    background: #e76f9e;
+    transform: scale(1.08);
+}
+
+/* Task List */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Scrollbar */
+.task-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+    background: #f5b0ca;
+    border-radius: 10px;
+}
+
+/* Task */
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: #fff0f6;
+    border: 1px solid #ffdeeb;
+    border-radius: 15px;
+    transition: 0.3s;
+    animation: appear 0.3s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task:hover {
+    background: #ffe7f0;
+    transform: translateY(-2px);
+}
+
+/* Task Text */
+.task span {
+    flex: 1;
+    min-width: 0;
+    color: #b86688;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+/* Check Button */
+.check-btn {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #f3a2bf;
+    border-radius: 8px;
+    background: white;
+    color: white;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.check-btn:hover {
+    background: #f7b1ca;
+}
+
+/* Completed Task */
+.task.true {
+    background: #ffe4ef;
+    opacity: 0.7;
+}
+
+.task.true span {
+    text-decoration: line-through;
+    color: #d99ab4;
+}
+
+.task.true .check-btn {
+    background: #ed8eb2;
+    border-color: #ed8eb2;
+}
+
+/* Delete Button */
+.delete-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 10px;
+    background: #ffe0e9;
+    color: #e77c9e;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: #f28bad;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Footer */
+.foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px dashed #ffd1e2;
+}
+
+.foot span {
+    color: #c77c9c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#countPendingTasks {
+    color: #ed79a4;
+    font-weight: 800;
+}
+
+/* Clear All Button */
+.foot button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 12px;
+    background: #f6a0be;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.foot button:hover {
+    background: #e779a5;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 22px;
+    }
+
+    .head {
+        font-size: 26px;
+    }
+
+    .foot span {
+        font-size: 11px;
+    }
+}

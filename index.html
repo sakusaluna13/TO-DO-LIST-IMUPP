@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="head">
+            Todo List Imupp
+        </h2>
+
+        <div class="create-todo">
+            <input onkeypress="enterKey(event)" type="text" id="inputTodo"
+                placeholder="Add some todo ...">
+            <button onclick="addTodo()">
+                <i class='bx bx-plus'></i>
+            </button>
+        </div>
+
+        <div class="task-list">
+
+        </div>
+
+        <div class="foot">
+            <span>Kamu punya <span id="countPendingTasks">0</span> tugas yang belum selesai !!</span>
+            <button onclick="clearAll()">Hapus Semua</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
